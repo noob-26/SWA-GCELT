@@ -148,34 +148,34 @@
                     </div>
                     <div class="col-lg-6 col-md-6 contact-right">
                         <center><h3 class="section-title-2 text-uppercase font-weight-300"><b>Register Now</h3></center>
-                        <form action="#" method="post" class="tm-contact-form">
+                        <form action="/signup" method="post" class="tm-contact-form">
                             <div class="tm-contact-form">
                                 <div class="form-group">
-                                    <input type="text" id="contact_name" class="form-control" placeholder="ENTER YOUR FULL NAME" />
+                                    <input type="text" id="contact_name" name="name" class="form-control" placeholder="ENTER YOUR FULL NAME" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" id="contact_email" class="form-control" placeholder="ENTER YOUR EMAIL ID" />
+                                    <input type="email" id="contact_email" name="email" class="form-control" placeholder="ENTER YOUR EMAIL ID" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" id="contact_email" class="form-control" placeholder="ENTER YOUR MOBILE NO." />
+                                    <input type="number" id="contact_email" name="mobile_number" class="form-control" placeholder="ENTER YOUR MOBILE NO." required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="contact_subject" class="form-control" placeholder="ENTER YOUR STREAM" />
+                                    <input type="text" id="contact_subject" name="stream" class="form-control" placeholder="ENTER YOUR STREAM" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="contact_name" class="form-control" placeholder="ENTER YOUR PASSING YEAR" />
+                                    <input type="number" id="contact_name" name="passing_year" class="form-control" placeholder="ENTER YOUR PASSING YEAR" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" id="contact_email" class="form-control" placeholder="PASSWORD" />
+                                    <input type="password" id="contact_email" name="password" class="form-control" placeholder="PASSWORD" required/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="contact_subject" class="form-control" placeholder="CONFIRM PASSWORD" />
+                                    <input type="password" id="contact_subject" name="confirm_password" class="form-control" placeholder="CONFIRM PASSWORD" required/>
                                 </div>
                                 <div class="form-group">
-                                    <textarea id="contact_message" class="form-control" rows="5" cols="75" placeholder="MESSAGE"></textarea>
+                                    <textarea id="contact_message" name="message" class="form-control" rows="5" cols="75" placeholder="MESSAGE(OPTIONAL)"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" name="submit" class="text-uppercase btn-blue-gradient btn-submit">sign up</button>
+                                    <button type="submit" class="text-uppercase btn-blue-gradient btn-submit">sign up</button>
                                 </div>
                             </div>
                         </form>
@@ -250,6 +250,7 @@
         <script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
         <script type="text/javascript" src="/js/responsiveCarousel.min.js"></script>      <!-- Carousel -->
         <script type="text/javascript" src="/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+
         <script>
 
             $(function() {
