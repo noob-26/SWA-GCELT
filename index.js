@@ -73,6 +73,25 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+app.post("/login", async (req, res) => {
+  try {
+    const student = await Student.findOne({ email: req.body.email });
+    console.log(student);
+    if (student) {
+      const cmp = await bcrypt.compare(req.body.password, student.password);
+      if (cmp) {
+        res.send("Auth Successful");
+      } else {
+        res.send("Wrong email or password.");
+      }
+    } else {
+      res.send("Wrong email or password.");
+    }
+  } catch (error) {
+    console.log(error);
+   }
+});
+
 app.listen(PORT, () => {
   console.log("runnnnninnngggg");
 });
