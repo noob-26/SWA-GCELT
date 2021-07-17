@@ -4,6 +4,7 @@ const app = express();
 require("dotenv/config");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 const Student = require("./models/Student");
 
 const PORT = process.env.PORT || 3000;
@@ -53,18 +54,18 @@ app.get("/contact", (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  const student = new Student({
-    name: req.body.name,
-    email: req.body.email,
-    mobile_number: req.body.mobile_number,
-    stream: req.body.stream,
-    passing_year: req.body.passing_year,
-    password: req.body.password,
-    message: req.body.message,
-  });
-
+   
   try {
-    const newStudent = await student.save();
+    const hashedPwd = await bcrypt.hash(req.body.password, 10);
+    const newStudent = await Student.create({
+      name: req.body.name,
+      email: req.body.email,
+      mobile_number: req.body.mobile_number,
+      stream: req.body.stream,
+      passing_year: req.body.passing_year,
+      password: hashedPwd,
+      message: req.body.message,
+    });
     console.log(newStudent);
     res.send(newStudent);
   } catch (err) {
