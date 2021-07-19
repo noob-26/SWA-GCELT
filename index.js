@@ -53,6 +53,14 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+app.get("/register_page", (req, res) => {
+  res.render("register_page");
+});
+
+app.get("/login_page", (req, res) => {
+  res.render("login_page");
+});
+
 app.post("/signup", async (req, res) => {
    
   try {
@@ -80,7 +88,8 @@ app.post("/login", async (req, res) => {
     if (student) {
       const cmp = await bcrypt.compare(req.body.password, student.password);
       if (cmp) {
-        res.send("Auth Successful");
+        res.send("Auth Successful"); 
+       
       } else {
         res.send("Wrong email or password.");
       }
