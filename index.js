@@ -4,10 +4,12 @@ const app = express();
 require("dotenv/config");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const Student = require("./models/Student");
 
 const PORT = process.env.PORT || 3000;
+
+let currentUser = "";
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -49,6 +51,14 @@ app.get("/rc-gcelt", (req, res) => {
   res.render("rc-gcelt");
 });
 
+app.get("/gallery_batch", (req, res) => {
+  res.render("gallery_batch");
+})
+
+app.get("/gallery_program", (req, res) => {
+  res.render("gallery_program");
+})
+
 app.get("/contact", (req, res) => {
   res.render("contact");
 });
@@ -62,7 +72,6 @@ app.get("/login_page", (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-   
   try {
     const hashedPwd = await bcrypt.hash(req.body.password, 10);
     const newStudent = await Student.create({
@@ -74,8 +83,7 @@ app.post("/signup", async (req, res) => {
       password: hashedPwd,
       message: req.body.message,
     });
-    console.log(newStudent);
-    res.send(newStudent);
+    res.redirect('/login_page');
   } catch (err) {
     console.log(err);
   }
@@ -84,10 +92,11 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async (req, res) => {
   try {
     const student = await Student.findOne({ email: req.body.email });
-    console.log(student);
     if (student) {
       const cmp = await bcrypt.compare(req.body.password, student.password);
       if (cmp) {
+        currentUser = student.name.split(' ')[0];
+        console.log(currentUser);
         res.send("Auth Successful"); 
        
       } else {
