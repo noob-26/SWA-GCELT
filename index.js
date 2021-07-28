@@ -73,11 +73,14 @@ app.get("/login_page", (req, res) => {
 
 app.post("/signup", async (req, res) => {
   try {
+    const student = await Student.findOne({ email: req.body.email });
+    if (student){res.send('User already exists')};
     const hashedPwd = await bcrypt.hash(req.body.password, 10);
     const newStudent = await Student.create({
       name: req.body.name,
       email: req.body.email,
       mobile_number: req.body.mobile_number,
+      profession: req.body.profession,
       stream: req.body.stream,
       passing_year: req.body.passing_year,
       password: hashedPwd,
@@ -97,7 +100,8 @@ app.post("/login", async (req, res) => {
       if (cmp) {
         currentUser = student.name.split(' ')[0];
         console.log(currentUser);
-        res.send("Auth Successful"); 
+        //res.send("Auth Successful"); 
+        res.render('dashboard', {name:student.name, email:student.email, phone:student.mobile_number, stream:student.stream, batch:student.passing_year, profession:student.profession})
        
       } else {
         res.send("Wrong email or password.");

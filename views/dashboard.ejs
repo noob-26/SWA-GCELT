@@ -16,6 +16,8 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/font-awesome.min.css" rel="stylesheet">
         <link href="/css/templatemo-style.css" rel="stylesheet">
+        <link href="/css/dashboard-style.css" rel="stylesheet">
+        
         <link rel="stylesheet" href="Account Id/style.css" />
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -49,126 +51,110 @@
                         <p>
                          <h4> <a href="/register_page" style="color: #ffffff">Register</a> </h4>
                         </p>    
-                        
                     </center>
                 </div>
-                 <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1">
+                <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1">
                     <center>
                         <p>
-                            <h4> <a href="/login_page" style="color: #ffffff">Log In</a> </h4>
+                            <h4> <a class="active" href="/login_page" style="color: #ffffff">Log In</a> </h4>
                         </p>    
                     </center>
+                </div>
+
                  </div>
+            </div>
+        </div>
+  
+        <!-- end header -->
+        <!-- header image -->
+         
+        <!-- end header image -->
+        <!-- Welcome message -->
+         
+
+<section class="templatemo-container">
+    <div class="container">
+            
+      
+
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src=" " alt="profile photo"/>
+                         
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h2>
+                                    <%= name %>
+                                </h2>
+                    </div>
+
+                            <div class="row">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Stream</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><%= stream%></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Batch</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><%= batch %></p>
+                                        </div>
+                                    </div>
+                                         
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><%= email %></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><%= phone%></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Profession</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><%= profession %></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                </div>
+
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
                 </div>
  
             </div>
-        </div>
+        </form>           
+    </div>
 
-        <div class="header-bg">
-            <div class="container-fluid"style="color: #0a4035">
 
-                <div class="row">
-                    <div class="mobile-menu-icon">
-                        <i class="fa fa-bars"></i>
-                    </div>
-                    <div class="nav navbar-nav templatemo-nav-container">
-                        <nav class="templatemo-nav" data-spy="affix" data-offset-top="197">
-                            <ul>
-                                <li><a href="https://gcelt.gov.in/"style="color: #ffffff" >GCELT</a></li>
-                                <li><a href="/" style="color: #ffffff">Home</a></li>
-                                <li><a href="/event"style="color: #ffffff" >Event</a></li>
-                                <li><a href="/union_members" style="color: #ffffff">Union Members</a></li>
-                                <li><a href="/gallery"style="color: #ffffff">Gallery</a></li>
-                                <li><a href="/student_id"style="color: #ffffff" >Students</a></li>
-                                <li><a href="/rc-gcelt"style="color: #ffffff" >RC_Gcelt</a></li>
-                                <li><a href="/contact"style="color: #ffffff">contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-             </div>    
-         </div>       
-        <!-- end header -->
-        <!-- header image -->
-        <div class="header-img">
-            <center><marquee width = "100%"><h3 style="color:red;"><img src="/img/new.gif" alt="" width="100" height="50">This example will take only 50% width</h3></marquee></center>
-        </div>
-
-        <!-- end header image -->
-        <!-- Welcome message -->
-        <div class="welcome-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="welcome-wrapper">
-                            <h2 class="welcome-title text-uppercase">Welcome</h2>
-                            <img src="/img/welcome-divider-lines.png" alt="Welcome divider" class="welcome-divider-lines-img">
-                            <p class="welcome-description">Multi Profile is free responsive website template for everyone. Feel free to download and use this template for your websites. Thank you for visiting templatemo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-<section class="templatemo-container">
-<div class="container">
-    <center><h3 class="section-title-2 text-uppercase font-weight-300"><b>Register</h3></center>
-        <form action="/signup" method="post" class="tm-contact-form">
-            <div class="tm-contact-form">
-                <div class="form-group">
-                    <input type="text" id="contact_name" name="name" class="form-control" placeholder="FULL NAME" required/>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="contact_email" name="email" class="form-control" placeholder="EMAIL ID" required/>
-                </div>
-                <div class="form-group">
-                    <input type="number" id="contact_number" name="mobile_number" class="form-control" placeholder="MOBILE NO." required/>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="contact_profession" name="profession" class="form-control" placeholder="PROFESSION" required/>
-                </div>
-                <div class="form-group"> 
-                    <select name="stream" class="form-select" aria-label="Default select example">
-                        <option selected>STREAM</option>
-                        <option value="Leather Technology">Leather Technology</option>
-                        <option value="Computer Science and Engineering">Computer Science and Engineering</option>
-                        <option value="Information Technology">Information Technology</option>
-                         
-                      </select>
-                    </div>
-                
-                <div class="form-group"> 
-                <select name="passing_year" class="form-select" aria-label="Default select example">
-                    <option selected>BATCH</option>
-                    <script>
-
-                        for (let i = 1919; i <= 2026; i++) {
-                            var temp =i+"-"+(i+4);
-                            document.write("<option value="+temp+">"+temp+"</option>");
-                        }
-    
-                    </script>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                    <input type="password" id="contact_email" name="password" class="form-control" placeholder="PASSWORD" required/>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="contact_subject" name="confirm_password" class="form-control" placeholder="CONFIRM PASSWORD" required/>
-                </div> 
-                <div class="form-group">
-                    <button type="submit" class="text-uppercase btn-blue-gradient btn-submit">sign up</button>
-                </div>
-                <div class="form-group">
-                    <center> 
-                    <a href="/login_page" style="font-size: large; color: #1f4853;">Already registered? Log In here</a>
-                </center>
-                </div>
-            </div>
-        </form>
 </div>
+
+
 </section>
+        
+ 
 <!-- Who We Are -->
 
 <div class="blue-divider effect1">
