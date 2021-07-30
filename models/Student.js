@@ -6,7 +6,6 @@ const StudentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-
   email: {
     type: String,
     required: true,
@@ -15,11 +14,15 @@ const StudentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  profession: {
+    type: String,
+    required: true,
+  },
   stream: {
     type: String,
     required: true,
   },
-  passing_year: {
+  batch_year: {
     type: String,
     required: true,
   },
@@ -27,9 +30,11 @@ const StudentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  message: {
+  profilePicture: {
+    type: Buffer,
+  },
+  profilePictureType: {
     type: String,
-    default: "",
   },
 });
 module.exports = mongoose.model("Student", StudentSchema);
