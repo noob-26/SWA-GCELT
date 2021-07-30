@@ -17,6 +17,8 @@
         <link href="/css/font-awesome.min.css" rel="stylesheet">
         <link href="/css/templatemo-style.css" rel="stylesheet">
         <link rel="stylesheet" href="Account Id/style.css" />
+        <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+        <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet"/>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -138,7 +140,7 @@
                     </div>
                 
                 <div class="form-group"> 
-                <select name="passing_year" class="form-select" aria-label="Default select example">
+                <select name="batch_year" class="form-select" aria-label="Default select example">
                     <option selected>BATCH</option>
                     <script>
 
@@ -152,11 +154,17 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="password" id="contact_email" name="password" class="form-control" placeholder="PASSWORD" required/>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="PASSWORD" required/>
                 </div>
                 <div class="form-group">
                     <input type="password" id="contact_subject" name="confirm_password" class="form-control" placeholder="CONFIRM PASSWORD" required/>
-                </div> 
+                </div>
+                
+                <div>
+                    PROFILE PICTURE
+                    <input type="file" id="profile_picture" name="profile_picture" class="file_upload"/>
+                </div>
+                
                 <div class="form-group">
                     <button type="submit" class="text-uppercase btn-blue-gradient btn-submit">sign up</button>
                 </div>
@@ -237,6 +245,12 @@
 <script type="text/javascript" src="/js/responsiveCarousel.min.js"></script>      <!-- Carousel -->
 <script type="text/javascript" src="/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
 
+<script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+<script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
+<script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+
 <script>
     $(function() {
         $('.crsl-items').carousel({
@@ -248,6 +262,20 @@
         $(".crsl-nav a[href=#]").on('click', function(e) {
             e.preventDefault();
         });
+    });
+
+    FilePond.registerPlugin(
+        FilePondPluginImagePreview,
+        FilePondPluginImageCrop,
+        FilePondPluginFileEncode,
+        FilePondPluginImageResize
+    );
+
+    const file_upload = document.getElementsByClassName('file_upload')[0];
+    FilePond.create(file_upload, {
+        imagePreviewHeight: 300,
+        imageResizeTargetWidth: 200,
+        imageResizeTargetHeight: 200
     });
 </script>
 </body>
