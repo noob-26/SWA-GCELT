@@ -19,6 +19,7 @@ router.post("/login", async (req, res) => {
           stream: student.stream,
           batch: student.batch_year,
           profession: student.profession,
+          profilePicture: student.profilePicturePath,
         });
       } else {
         res.send("Wrong email or password.");
