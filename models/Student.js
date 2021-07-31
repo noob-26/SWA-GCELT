@@ -37,4 +37,13 @@ const StudentSchema = mongoose.Schema({
     type: String,
   },
 });
+
+StudentSchema.virtual("profilePicturePath").get(function () {
+  if (this.profilePicture != null && this.profilePictureType != null) {
+    return `data:${
+      this.profilePictureType
+    };charset=utf-8;base64,${this.profilePicture.toString("base64")}`;
+  }
+});
+
 module.exports = mongoose.model("Student", StudentSchema);
