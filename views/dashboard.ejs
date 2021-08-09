@@ -27,8 +27,13 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <script type="text/javascript">
+            window.history.forward();
+            function noBack() { window.history.forward(); }
+        </script>
+
     </head>
-    <body class="templatemo-container">
+    <body class="templatemo-container" onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
         <!-- header -->
         <div class="welcome-container">
             <div class="container">
@@ -47,16 +52,12 @@
                     </center>
                 </div>
                 <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1">
-                    <center>
-                        <p>
-                         <h4> <a href="/register_page" style="color: #ffffff">Register</a> </h4>
-                        </p>    
-                    </center>
+    
                 </div>
                 <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1">
                     <center>
                         <p>
-                            <h4> <a class="active" href="/login_page" style="color: #ffffff">Log In</a> </h4>
+                            <h4> <a class="active" href="/" style="color: #ffffff">Log Out</a> </h4>
                         </p>    
                     </center>
                 </div>
