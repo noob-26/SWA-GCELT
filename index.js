@@ -8,7 +8,6 @@ const mongoose = require("mongoose");
 const routes = require("./routes/route").router;
 const signupRouter = require("./routes/signup").router;
 const loginRouter = require("./routes/login").router;
-
 const PORT = process.env.PORT || 3000;
 
 app.use(
