@@ -145,7 +145,7 @@
                 </div>
                 
                 <div>
-                    PROFILE PICTURE
+                    PROFILE PICTURE (Please make sure the file size is less than 150KB)
                     <input type="file" id="profile_picture" name="profile_picture" class="file_upload"/>
                 </div>
                 
@@ -231,6 +231,7 @@
 <script type="text/javascript" src="/js/responsiveCarousel.min.js"></script>      <!-- Carousel -->
 <script type="text/javascript" src="/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
 
+<script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
 <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
 <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
 <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
@@ -254,14 +255,16 @@
         FilePondPluginImagePreview,
         FilePondPluginImageCrop,
         FilePondPluginFileEncode,
-        FilePondPluginImageResize
+        FilePondPluginImageResize,
+        FilePondPluginFileValidateSize
     );
 
     const file_upload = document.getElementsByClassName('file_upload')[0];
     FilePond.create(file_upload, {
         imagePreviewHeight: 300,
         imageResizeTargetWidth: 200,
-        imageResizeTargetHeight: 200
+        imageResizeTargetHeight: 200,
+        maxFileSize: '150KB'
     });
 </script>
 </body>
