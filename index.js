@@ -5,9 +5,6 @@ require("dotenv/config");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-const routes = require("./routes/route").router;
-const signupRouter = require("./routes/signup").router;
-const loginRouter = require("./routes/login").router;
 const PORT = process.env.PORT || 3000;
 
 app.use(
@@ -33,9 +30,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // );
 
 //Routes
-app.use("/", routes);
-app.use("/", signupRouter);
-app.use("/", loginRouter);
+app.use("/", require("./routes/route"));
+app.use("/", require("./routes/signup"));
+app.use("/", require("./routes/login"));
 
 //Starting Server
 app.listen(PORT, () => {
