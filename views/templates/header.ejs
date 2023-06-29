@@ -7,11 +7,28 @@
         <link rel="icon" href="/img/lg2.png" type="image/x-icon" />
         <title>STUDENTS' WELFARE ASSOCIATION,GCELT</title>
         <meta name="description" content="">
+        <meta name="author" content="SWAGCELT">
         
+        <!-- 
+        Multi Profile
+        http://www.templatemo.com/preview/templatemo_457_multi_profile
+        -->
+
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/font-awesome.min.css" rel="stylesheet">
         <link href="/css/templatemo-style.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="Account Id/style.css" />
+        <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+        <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet"/>
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
     </head>
     <body class="templatemo-container">
@@ -47,13 +64,13 @@
                         <nav class="templatemo-nav" data-spy="affix" data-offset-top="197">
                             <ul>
                                 <li><a href="https://gcelt.gov.in/"style="color: #ffffff" >GCELT</a></li>
-                                <li><a href="/" style="color: #ffffff" class="active">Home</a></li>
-                                <li><a href="/event" style="color: #ffffff" >Event</a></li>
-                                <li><a href="/union_members" style="color: #ffffff">Union Members</a></li>
-                                <li><a href="/gallery"style="color: #ffffff">Gallery</a></li>
-                                <li><a href="/student_id"style="color: #ffffff" >Students</a></li>
-                                <li><a href="/rc-gcelt"style="color: #ffffff" >RC_Gcelt</a></li>
-                                <li><a href="/contact"style="color: #ffffff">contact</a></li>
+                                <li><a href="/" style="color: #ffffff" class='<%= activeState=='home'?"active":null %>'>Home</a></li>
+                                <li><a href="/event" style="color: #ffffff" class='<%= activeState=='event'?"active":null %>'>Event</a></li>
+                                <li><a href="/union_members" style="color: #ffffff" class='<%= activeState=='union'?"active":null %>'>Union Members</a></li>
+                                <li><a href="/gallery"style="color: #ffffff" class='<%= activeState=='gallery'?"active":null %>'>Gallery</a></li>
+                                <li><a href="/student_id"style="color: #ffffff" class='<%= activeState=='stud_id'?"active":null %>' >Students</a></li>
+                                <li><a href="/rc-gcelt"style="color: #ffffff" class='<%= activeState=='rc-gcelt'?"active":null %>' >RC_Gcelt</a></li>
+                                <li><a href="/contact"style="color: #ffffff" class='<%= activeState=='contact'?"active":null %>'>contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -81,5 +98,5 @@
             </div>
         </div>
         <!-- Welcome message -->
-        <!-- main content -->
+        
 

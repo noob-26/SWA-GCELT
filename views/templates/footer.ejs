@@ -1,3 +1,4 @@
+<!-- start of pre-footer style -->
 <div class="blue-divider effect1">
     <div class="dark-blue-bg"></div>
     <div class="blue-divider-bg-graphic"></div>
@@ -60,16 +61,24 @@
         </div>
     </div>
 </section>
-<!-- end main content -->
+
+
+<!-- start of footer style -->
 <footer class="text-center">
-    <p class="small copyright-text">2020 All Rights Reserved by SWA GCELT | </p>
+    <p class="small copyright-text">2023 All Rights Reserved by SWA GCELT | </p>
 </footer>
 
 <!-- JS -->
-<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script> <!-- jQuery -->
-<script type="text/javascript" src="/js/responsiveCarousel.min.js"></script> <!-- Carousel -->
-<script type="text/javascript" src="/js/templatemo-script.js"></script> <!-- Templatemo Script -->
-<script>
+<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script> 
+<% if(!funcNotNeeded){ %>
+<!-- jQuery -->
+<script type="text/javascript" src="/js/responsiveCarousel.min.js"></script> 
+<% } %>
+<!-- Carousel -->
+<script type="text/javascript" src="/js/templatemo-script.js"></script> 
+<!-- Templatemo Script -->
+<% if(!funcNotNeeded){ %>
+<script >
 
     $(function () {
         $('.crsl-items').carousel({
@@ -82,8 +91,9 @@
             e.preventDefault();
         });
     });
-
 </script>
+<script src="list.js"></script>
+<% } %>
 
 </body>
 
