@@ -36,11 +36,11 @@
 
                     <!-- start 2022-23--> 
                     <% memberList.forEach(member => { %>
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 margin-bottom-30 folio-item 2022-23">
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 margin-bottom-30 folio-item <%= member.year %>">
                             <img src=<%= member.src %> alt=<%= member.name %> class="img-thumbnail">
                             <samp><p><h4><%= member.name %></h4></p></samp>
                             <samp><p><%= member.role %></p></samp>
-                            <samp><p><%= member.year %></p></samp>                  
+                            <samp><p>(<%= member.year %>)</p></samp>                  
                         </div>
                       <% }); %>                  
                     
