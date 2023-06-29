@@ -1,5 +1,6 @@
-<%- include('templates/header.ejs') -%>
-        <!-- Welcome message -->
+<%- include('templates/header.ejs' , {
+    activeState:'home'
+  } ) -%>
         <!-- main content -->
         <section class="templatemo-container section-shadow-bottom">
             <div class="container">
@@ -18,16 +19,16 @@
                     </div>
                       <div id="folio-container" class="row">
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 margin-bottom-30 folio-item ">
-                        <img src="https://gcelt.gov.in/assets/images/campus.jpg" alt="Image" class="img-thumbnail">
+                        <img src="https://gcelt.gov.in/wp-content/uploads/2023/05/IMG_4588-scaled.jpg" alt="Image" class="img-thumbnail">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 margin-bottom-30 folio-item design">
                         <img src="http://photos.wikimapia.org/p/00/02/46/46/55_big.jpg" alt="Image" class="img-thumbnail">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 margin-bottom-30 folio-item web">
-                        <img src="https://gcelt.gov.in/assets/images/gallery/3.jpg" alt="Image" class="img-thumbnail">
+                        <img src=https://gcelt.gov.in/wp-content/uploads/2023/05/IMG_4584-1-scaled.jpg" alt="Image" class="img-thumbnail">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 margin-bottom-30 folio-item web">
-                        <img src="https://gcelt.gov.in/assets/images/gallery/4.jpg" alt="Image" class="img-thumbnail">
+                        <img src="https://gcelt.gov.in/wp-content/uploads/2023/05/IMG_4577-1-scaled.jpg" alt="Image" class="img-thumbnail">
                     </div>
                         </samp>
                     </div>
@@ -260,4 +261,7 @@
             </div>
             <div class="bg-overlay"></div>
         </section>
-<%- include('templates/footer.ejs') -%>        
+    <!--end of   main content -->   
+<%- include('templates/footer.ejs' , {
+    funcNotNeeded:false
+    } ) -%>      
