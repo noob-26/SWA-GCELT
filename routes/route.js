@@ -1,6 +1,7 @@
 //ROUTES
 const express = require("express");
 const router = express.Router();
+const memberList = require('../views/listmember/member');
 
 //Routes
 router.get("/", (req, res) => {
@@ -12,7 +13,7 @@ router.get("/event", (req, res) => {
 });
 
 router.get("/union_members", (req, res) => {
-  res.render("union_members");
+  res.render("union_members", {memberList:memberList});
 });
 
 router.get("/gallery", (req, res) => {
@@ -51,6 +52,4 @@ router.get("/login_page", (req, res) => {
   res.render("login_page");
 });
 
-module.exports = {
-  router,
-};
+module.exports = router
