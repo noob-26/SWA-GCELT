@@ -43,6 +43,4 @@ function saveFiletoDatabase(student, content) {
   student.profilePictureType = data.type;
 }
 
-module.exports = {
-  router,
-};
+module.exports = router;
